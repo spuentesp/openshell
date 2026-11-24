@@ -1310,8 +1310,10 @@ message CreateSandboxRequest {
   SandboxSpec spec = 1;
   // Optional user-supplied sandbox name. When empty the server generates one.
   string name = 2;
-  // Optional labels for the sandbox (key-value metadata).
-  map<string, string> labels = 3;
+  // DEMO (synthetic change for Parallax): the labels map was removed from the
+  // create request. Field number 3 and the name stay reserved.
+  reserved 3;
+  reserved "labels";
   // Optional annotations for the sandbox (non-selector metadata). Keys under
   // the `internal.openshell.ai/` prefix are reserved for the gateway.
   map<string, string> annotations = 4;
